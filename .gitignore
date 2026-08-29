@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+qyy_env/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.zip
+*.mov
+*.mp4
+dataset/images/
+dataset/labels/
+

@@ -1,0 +1,54 @@
+YOLO final dataset split report
+===============================
+Random seed: 20260824
+Total images: 1000
+
+TRAIN
+-----
+Images: 800
+Labels: 800
+Bottle boxes: 2358
+Mouse boxes: 696
+Bottle-only images: 308
+Mouse-only images: 308
+Both-class images: 184
+Self-shot images: 20
+Corrupt images: 0
+Empty labels: 0
+
+VAL
+---
+Images: 100
+Labels: 100
+Bottle boxes: 227
+Mouse boxes: 82
+Bottle-only images: 38
+Mouse-only images: 37
+Both-class images: 25
+Self-shot images: 5
+Corrupt images: 0
+Empty labels: 0
+
+TEST
+----
+Images: 100
+Labels: 100
+Bottle boxes: 297
+Mouse boxes: 95
+Bottle-only images: 38
+Mouse-only images: 38
+Both-class images: 24
+Self-shot images: 5
+Corrupt images: 0
+Empty labels: 0
+
+VALIDATION
+----------
+Missing labels: 0
+Orphan labels: 0
+Invalid class IDs: 0
+Out-of-range/malformed coordinates: 0
+Duplicate filenames across splits: 0
+Duplicate SHA256 images across splits: 0
+Self-shot distribution train/val/test: 20/5/5
+Overall status: PASS
