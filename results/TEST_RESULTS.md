@@ -1,30 +1,34 @@
-# 正式测试结果说明
+# Formal Jetson Test Results
 
-`correct_cases` 与 `error_cases` 中的保存帧作为本项目正式测试实例，判定规则如下：
+The formal test uses the first 20 saved frames from the final Jetson session on 31 August 2026, ordered by capture time. A frame is counted as correct only when every visible target is detected with the correct class. No incorrect class assignment occurred in this session; all failed frames are partial missed detections.
 
-- `correct_cases` 中全部帧为正确检测。
-- `error_cases` 中全部帧为漏检案例，没有把目标识别成错误类别的错分类案例。
-- 每张保存帧按一个测试实例进行整帧判定。
+## Summary
 
-## 统计结果
+- Formal test frames: 20
+- Correct frames: 17
+- Failed frames: 3
+- Frame-level accuracy: `17 / 20 x 100% = 85.00%`
+- Required accuracy: at least 80%
+- Result: requirement met
 
-- 测试实例：22
-- 正确实例：21
-- 错误实例：1
-- 正确率：`21 / 22 × 100% = 95.45%`
-- 作业门槛：至少 20 个实例、正确率不低于 80%
-- 结论：测试数量和正确率均达到要求
+## Full-loop FPS
 
-## FPS
+- Minimum: 16.7 FPS
+- Maximum: 25.8 FPS
+- Arithmetic mean: 22.20 FPS
+- Required speed: at least 5 FPS
+- Result: requirement met
 
-- 最低：16.6 FPS
-- 最高：16.9 FPS
-- 22 帧算术平均：16.77 FPS
-- 作业门槛：不低于 5 FPS
-- 结论：所有保存测试帧及平均值均达到要求
+FPS values are read directly from the saved Jetson frames. The program calculates a 30-frame moving average from complete loop intervals, covering camera capture, inference, annotation, display, and event handling rather than converting model-only inference time.
 
-## 错误类型
+## Error analysis
 
-唯一错误帧为 `error_20260829_201227_163337.jpg`。画面中 mouse 以 0.96 置信度正确识别，但横放 bottle 没有检测框，属于 bottle 漏检（false negative），不是错分类。
+The three failed formal frames contain correctly classified detections but miss one visible mouse:
 
-逐帧文件名、ground truth、prediction、置信度、FPS 和判定见 `test_20_results.csv`。文件名沿用作业原定名称，但实际包含 22 条已确认记录，超过规定的 20 个测试实例。
+1. `error_reclassified_20260831_215645_674393.jpg`: two of three mice detected.
+2. `error_20260831_215703_550940.jpg`: two bottles and two of three mice detected.
+3. `error_20260831_215714_021213.jpg`: two bottles and one of two mice detected.
+
+An additional saved frame, `error_20260831_215718_819397.jpg`, is retained as a supplementary error example and is not included in the 20-frame accuracy calculation. It also contains a missed mouse and no wrong-class prediction.
+
+The per-frame classes, confidence values, FPS values, and decisions are recorded in `test_20_results.csv`.

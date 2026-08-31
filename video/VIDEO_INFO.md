@@ -1,33 +1,14 @@
-# 最终演示视频核验说明
+# Demonstration Video
 
-## 来源
+The final source recording is `IMG_9884.MOV`, captured on 31 August 2026.
 
-- 原始文件：`/Users/a7/Desktop/IMG_9829.MOV`
-- 原始大小：1,282,854,635 bytes
-- 原始画面：3840×2160，约 119.95 FPS
-- 原始时长：约 104.08 秒
-- 处理原则：桌面原件保持不变，仅生成提交副本。
+## Verified source properties
 
-## 提交副本
+- Resolution: 2160 x 3840, portrait orientation
+- Frame rate: approximately 119.945 FPS
+- Duration: approximately 69.94 seconds
+- Source size: 860,570,164 bytes
 
-- 文件：`final_demo.mp4`
-- 大小：190,079,575 bytes
-- SHA-256：`f57456e341e59579f4e35b67b702eb085d25d1e1238f10efde97a5c899442004`
-- 画面：1920×1080，30 FPS
-- 帧数：3122
-- 时长：约 104.07 秒
-- 音轨：无。提交副本用于呈现本作业要求的视觉演示；原始 `IMG_9829.MOV` 及其 AAC 音轨仍完整保存在桌面。
+The recording shows the QYY YOLO + ROS2 detection window running on the Jetson display. Sampled frames confirm live mouse detection, multi-mouse scenes, bottle and mouse scenes, bounding boxes, class labels, confidence values, and full-loop FPS values above 5 FPS.
 
-## 内容核验
-
-已对原始视频和提交副本进行分段抽帧检查，并检查提交副本首帧与 100 秒位置的解码。画面可确认包含：
-
-- NVIDIA Jetson 硬件和 USB 摄像头；
-- `ros2_detect.py` 实时检测界面；
-- bottle 检测；
-- mouse 检测；
-- bottle 与 mouse 同时检测；
-- bbox、class、confidence 与 FPS 叠加；
-- ROS2 `/qyy/detections` topic 的实时 JSON 输出。
-
-提交副本的首帧、100 秒位置均可正常解码，时长与原始视频一致（仅存在帧率取整造成的约 0.01 秒差异）。
+The public GitHub repository does not include the large video file. The course submission package contains a 1080 x 1920, 30 FPS submission copy, while the original MOV remains preserved locally.
