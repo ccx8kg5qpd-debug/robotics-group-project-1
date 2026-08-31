@@ -1,42 +1,71 @@
-# 机器人集成小组项目1
+# Robotics Integration Group Project 1
 
-基于 YOLOv8 和 NVIDIA Jetson Orin NX 的桌面目标检测与 ROS2 发布。
+**Author:** Yongyue Qi
 
-## 项目目标
+**Repository:** <https://github.com/ccx8kg5qpd-debug/robotics-group-project-1>
 
-项目识别两类桌面物体：
+This project implements real-time desktop object detection with YOLOv8 on an NVIDIA Jetson Orin NX and publishes structured detection results through ROS2.
+
+## Detection classes
 
 - `0 = bottle`
 - `1 = mouse`
 
-模型在 Jetson Orin NX 上读取 USB 摄像头画面，实时显示 bounding box、class、confidence 和完整循环 FPS，并通过 ROS2 topic `/qyy/detections` 发布 JSON 检测结果。
+The Jetson application displays bounding boxes, class names, confidence values, and full-loop FPS. The ROS2 program publishes the same detections as JSON on `/qyy/detections`.
 
-## 主要结果
+## Verified results
 
-- 最终数据集：1000 张图片、1000 个 YOLO 标注
-- 数据组成：30 张自采图片 + 970 张 COCO 2017 图片
-- 划分：train 800、val 100、test 100
-- 模型：YOLOv8n，100 epochs，imgsz 640
-- 推理阈值：`conf=0.70`
-- 正式测试：22 个实例，21 个正确，正确率 95.45%
-- 完整循环 FPS：16.6-16.9，平均 16.77 FPS
-- ROS2 node：`qyy_yolo_detector`
-- ROS2 topic：`/qyy/detections`
+- Dataset: 1,000 images and 1,000 YOLO label files
+- Data composition: 30 self-captured images and 970 COCO 2017 images
+- Split: 800 train, 100 validation, and 100 test images
+- Model: YOLOv8n, 100 epochs, image size 640
+- Final inference threshold: `conf=0.70`
+- Validation of `best.pt`: mAP50 0.555 and mAP50-95 0.405
+- Final Jetson test: 17 correct frames out of 20, accuracy 85.00%
+- Full-loop speed: 16.7-25.8 FPS, mean 22.20 FPS
+- ROS2 node: `qyy_yolo_detector`
+- ROS2 topic: `/qyy/detections`
 
-## 目录
+## Repository structure
 
 ```text
-dataset/     数据配置、划分统计、质量检查和来源/许可清单
-model/       最终模型 best.pt
-program/     Jetson 实时检测与 ROS2 发布程序
-results/     训练曲线、测试表和真实正确/错误案例
-report/      个人 LaTeX 模板、实验报告 PDF 和报告图片
-video/       演示视频参数及内容核验说明
+dataset/     Dataset configuration, split reports, validation, and source records
+model/       Final YOLOv8 model: best.pt
+program/     Real-time Jetson detection and ROS2 publishing programs
+results/     Training curves, formal test table, and saved Jetson cases
+report/      Final English experimental report and supporting figures
+video/       Verified metadata for the submitted demonstration video
 ```
 
-完整 1000 图数据集和演示视频随课程提交 ZIP 提交。GitHub 仓库仅保留数据配置、划分清单与逐图来源/许可记录，避免重复发布外部图片以及存放超大视频文件。
+The complete 1,000-image dataset and demonstration video are included in the course submission package. The repository contains the dataset configuration, split manifest, quality report, and per-image source and licence records.
 
-## Jetson 运行
+## Jetson environment
+
+The verified deployment used:
+
+- NVIDIA Jetson Orin NX
+- Ubuntu 22.04.5 LTS
+- JetPack 6.2.1 / L4T R36.4.4
+- Python 3.10.12
+- ROS2 Humble
+- CUDA 12.6 compatible ARM64 PyTorch
+- Ultralytics and OpenCV
+
+## Run real-time detection
+
+```bash
+cd ~/qyy_object_detection
+source qyy_env/bin/activate
+python detect_realtime.py
+```
+
+Controls:
+
+- `s`: save a correct case
+- `e`: save an error or missed-detection case
+- `q`: quit
+
+## Run ROS2 detection
 
 ```bash
 cd ~/qyy_object_detection
@@ -45,28 +74,36 @@ source /opt/ros/humble/setup.bash
 python ros2_detect.py
 ```
 
-另一个终端查看 ROS2 消息：
+In a second terminal:
 
 ```bash
 source /opt/ros/humble/setup.bash
 ros2 topic echo /qyy/detections
 ```
 
-普通实时检测：
+Published JSON format:
 
-```bash
-python detect_realtime.py
+```json
+{
+  "fps": 18.2,
+  "detections": [
+    {
+      "class": "bottle",
+      "confidence": 0.93,
+      "bbox": [100, 100, 300, 400]
+    }
+  ]
+}
 ```
 
-按键：`s` 保存正确案例，`e` 保存错误案例，`q` 退出。
+The numbers above illustrate the message schema and are not formal test measurements.
 
-## 数据来源
+## Dataset provenance
 
-自采数据为 30 张 iPhone 拍摄图片。其余 970 张来自 COCO 2017，标注由 COCO 官方 instance annotations 转换为 YOLO 格式。外部图片用于课程教学/科研实验，各图片许可信息见 `dataset/source_info/source_manifest.csv`。
+The 30 self-captured images were photographed with an iPhone. The remaining 970 images come from COCO 2017, and their official instance annotations were converted to YOLO format. Individual image source URLs and licence information are recorded in `dataset/source_info/source_manifest.csv`.
 
-## 报告
+External public data were used for course teaching and research. Licence conditions differ between individual images; consult the accompanying source manifest before redistribution.
 
-实验报告使用个人设计的 LaTeX 模板，源文件和编译后的 PDF 位于 `report/`。
+## Report
 
-项目仓库：<https://github.com/ccx8kg5qpd-debug/robotics-group-project-1>
-
+The final English PDF report is located in `report/Final_Report.pdf`. It uses an original LaTeX layout prepared for this project and includes the repository link and commit-history evidence.
