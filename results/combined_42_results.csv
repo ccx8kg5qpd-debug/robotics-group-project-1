@@ -1,0 +1,43 @@
+session,session_index,image_file,ground_truth,prediction,confidence,fps,correct,notes
+session_1_20260829,1,correct_20260829_200939_489031.jpg,bottle,bottle,bottle=0.96,16.8,yes,Correct detection
+session_1_20260829,2,correct_20260829_200958_818762.jpg,mouse,mouse,mouse=0.96,16.8,yes,Correct detection
+session_1_20260829,3,correct_20260829_201003_018890.jpg,mouse,mouse,mouse=0.96,16.7,yes,Correct detection
+session_1_20260829,4,correct_20260829_201005_958117.jpg,mouse,mouse,mouse=0.98,16.7,yes,Correct detection
+session_1_20260829,5,correct_20260829_201009_486332.jpg,mouse,mouse,mouse=0.95,16.7,yes,Correct detection
+session_1_20260829,6,correct_20260829_201020_356069.jpg,mouse,mouse,mouse=0.96,16.6,yes,Correct detection
+session_1_20260829,7,correct_20260829_201029_350451.jpg,bottle,bottle,bottle=0.97,16.8,yes,Correct detection
+session_1_20260829,8,correct_20260829_201032_814690.jpg,bottle,bottle,bottle=0.96,16.7,yes,Correct detection
+session_1_20260829,9,correct_20260829_201035_482074.jpg,bottle,bottle,bottle=0.92,16.7,yes,Correct detection
+session_1_20260829,10,correct_20260829_201038_681986.jpg,bottle+mouse,bottle+mouse,bottle=0.93;mouse=0.70,16.8,yes,Mouse at the right frame edge; correctly detected
+session_1_20260829,11,correct_20260829_201041_681209.jpg,bottle,bottle,bottle=0.97,16.7,yes,Correct detection
+session_1_20260829,12,correct_20260829_201114_074822.jpg,bottle,bottle,bottle=0.95,16.8,yes,Correct detection
+session_1_20260829,13,correct_20260829_201121_737239.jpg,bottle,bottle,bottle=0.98,16.7,yes,Correct detection
+session_1_20260829,14,correct_20260829_201131_070241.jpg,bottle+mouse,bottle+mouse,bottle=0.97;mouse=0.96,16.9,yes,Bottle and mouse detected
+session_1_20260829,15,correct_20260829_201133_937729.jpg,bottle+mouse,bottle+mouse,bottle=0.95;mouse=0.96,16.9,yes,Bottle and mouse detected
+session_1_20260829,16,correct_20260829_201142_669611.jpg,bottle+mouse,bottle+mouse,bottle=0.98;mouse=0.89,16.8,yes,Bottle and mouse detected
+session_1_20260829,17,correct_20260829_201145_802174.jpg,bottle+mouse,bottle+mouse,bottle=0.93;mouse=0.98,16.8,yes,Bottle and mouse detected
+session_1_20260829,18,correct_20260829_201148_735888.jpg,bottle+mouse,bottle+mouse,bottle=0.98;mouse=0.95,16.8,yes,Bottle and mouse detected
+session_1_20260829,19,correct_20260829_201152_001838.jpg,bottle+mouse,bottle+mouse,bottle=0.90;mouse=0.95,16.7,yes,Bottle and mouse detected
+session_1_20260829,20,correct_20260829_201155_340646.jpg,bottle+mouse,bottle+mouse,bottle=0.96;mouse=0.92,16.9,yes,Bottle and mouse detected
+session_1_20260829,21,correct_20260829_201207_071662.jpg,bottle+mouse,bottle+mouse,bottle=0.97;mouse=0.96;mouse=0.70,16.9,yes,Bottle and two mouse detections; accepted during the session
+session_1_20260829,22,error_20260829_201227_163337.jpg,bottle+mouse,mouse,mouse=0.96,16.7,no,Bottle missed; mouse detected; no wrong-class prediction
+session_2_20260831,1,correct_20260831_215230_411448.jpg,mouse,mouse,mouse=0.97,16.7,yes,Single mouse detected
+session_2_20260831,2,correct_20260831_215234_679342.jpg,mouse x2,mouse x2,mouse=0.95;mouse=0.86,16.8,yes,Two mice detected
+session_2_20260831,3,correct_20260831_215236_964240.jpg,mouse,mouse,mouse=0.96,18.6,yes,Single mouse detected
+session_2_20260831,4,correct_20260831_215558_923770.jpg,mouse x2,mouse x2,mouse=0.99;mouse=0.95,22.6,yes,Two mice detected
+session_2_20260831,5,correct_20260831_215610_561082.jpg,mouse x2,mouse x2,mouse=0.99;mouse=0.94,22.3,yes,Two mice detected
+session_2_20260831,6,correct_20260831_215612_845445.jpg,mouse x2,mouse x2,mouse=0.95;mouse=0.96,22.3,yes,Two mice detected
+session_2_20260831,7,correct_20260831_215615_862994.jpg,mouse x2,mouse x2,mouse=0.97;mouse=0.97,24.9,yes,Two mice detected
+session_2_20260831,8,correct_20260831_215618_114052.jpg,mouse x2,mouse x2,mouse=0.88;mouse=0.93,25.3,yes,Two mice detected
+session_2_20260831,9,correct_20260831_215621_804710.jpg,mouse,mouse,mouse=0.91,25.5,yes,Single mouse detected
+session_2_20260831,10,correct_20260831_215625_134121.jpg,mouse x2,mouse x2,mouse=0.76;mouse=0.96,25.6,yes,Two mice detected
+session_2_20260831,11,correct_20260831_215627_612784.jpg,mouse,mouse,mouse=0.97,25.5,yes,Single mouse detected
+session_2_20260831,12,correct_20260831_215632_544389.jpg,mouse x3,mouse x3,mouse=0.98;mouse=0.98;mouse=0.97,25.0,yes,Three mice detected
+session_2_20260831,13,correct_20260831_215634_252836.jpg,mouse x3,mouse x3,mouse=0.98;mouse=0.99;mouse=0.85,25.1,yes,Three mice detected
+session_2_20260831,14,correct_20260831_215637_922092.jpg,mouse x3,mouse x3,mouse=0.97;mouse=0.97;mouse=0.87,25.0,yes,Three mice detected
+session_2_20260831,15,correct_20260831_215640_123589.jpg,mouse x3,mouse x3,mouse=0.95;mouse=0.98;mouse=0.85,21.3,yes,Three mice detected
+session_2_20260831,16,correct_20260831_215642_301804.jpg,mouse x3,mouse x3,mouse=0.99;mouse=0.97;mouse=0.90,24.5,yes,Three mice detected
+session_2_20260831,17,error_reclassified_20260831_215645_674393.jpg,mouse x3,mouse x2,mouse=0.87;mouse=0.96,25.8,no,Middle mouse missed; reclassified after visual review
+session_2_20260831,18,correct_20260831_215708_420301.jpg,bottle x2 + mouse,bottle x2 + mouse,bottle=0.93;bottle=0.82;mouse=0.97,17.0,yes,All three objects detected
+session_2_20260831,19,error_20260831_215703_550940.jpg,bottle x2 + mouse x3,bottle x2 + mouse x2,bottle=0.94;bottle=0.86;mouse=0.95;mouse=0.96,17.1,no,Rightmost mouse missed
+session_2_20260831,20,error_20260831_215714_021213.jpg,bottle x2 + mouse x2,bottle x2 + mouse,bottle=0.93;bottle=0.91;mouse=0.86,17.0,no,Rightmost mouse missed

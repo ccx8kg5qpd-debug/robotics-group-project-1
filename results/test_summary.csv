@@ -1,0 +1,4 @@
+scope,instances,correct,failed,accuracy_percent,fps_min,fps_mean,fps_max,scene_description
+session_1_20260829,22,21,1,95.45,16.6,16.77,16.9,Baseline scenes with mostly single objects and simpler bottle-mouse combinations
+session_2_20260831,20,17,3,85.00,16.7,22.20,25.8,"More objects per frame and more complex multi-object layouts, distances, and viewpoints"
+combined,42,38,4,90.48,16.6,19.35,25.8,Both complete Jetson test sessions

@@ -21,8 +21,10 @@ The Jetson application displays bounding boxes, class names, confidence values, 
 - Model: YOLOv8n, 100 epochs, image size 640
 - Final inference threshold: `conf=0.70`
 - Validation of `best.pt`: mAP50 0.555 and mAP50-95 0.405
-- Final Jetson test: 17 correct frames out of 20, accuracy 85.00%
-- Full-loop speed: 16.7-25.8 FPS, mean 22.20 FPS
+- Two complete Jetson test sessions: 38 correct frames out of 42, combined accuracy 90.48%
+- Session 1: 21/22 correct (95.45%) in baseline single- and mixed-object scenes
+- Session 2: 17/20 correct (85.00%) with more objects per frame and more complex layouts, distances, and viewpoints
+- Full-loop speed across both sessions: 16.6-25.8 FPS, combined mean 19.35 FPS
 - ROS2 node: `qyy_yolo_detector`
 - ROS2 topic: `/qyy/detections`
 
@@ -32,7 +34,7 @@ The Jetson application displays bounding boxes, class names, confidence values, 
 dataset/     Dataset configuration, split reports, validation, and source records
 model/       Final YOLOv8 model: best.pt
 program/     Real-time Jetson detection and ROS2 publishing programs
-results/     Training curves, formal test table, and saved Jetson cases
+results/     Training curves, two-session test tables, and saved Jetson cases
 report/      Final English experimental report and supporting figures
 video/       Verified metadata for the submitted demonstration video
 ```

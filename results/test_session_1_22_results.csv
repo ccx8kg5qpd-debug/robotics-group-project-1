@@ -1,0 +1,23 @@
+index,image_file,ground_truth,prediction,confidence,fps,correct,notes
+1,correct_20260829_200939_489031.jpg,bottle,bottle,bottle=0.96,16.8,yes,Correct detection
+2,correct_20260829_200958_818762.jpg,mouse,mouse,mouse=0.96,16.8,yes,Correct detection
+3,correct_20260829_201003_018890.jpg,mouse,mouse,mouse=0.96,16.7,yes,Correct detection
+4,correct_20260829_201005_958117.jpg,mouse,mouse,mouse=0.98,16.7,yes,Correct detection
+5,correct_20260829_201009_486332.jpg,mouse,mouse,mouse=0.95,16.7,yes,Correct detection
+6,correct_20260829_201020_356069.jpg,mouse,mouse,mouse=0.96,16.6,yes,Correct detection
+7,correct_20260829_201029_350451.jpg,bottle,bottle,bottle=0.97,16.8,yes,Correct detection
+8,correct_20260829_201032_814690.jpg,bottle,bottle,bottle=0.96,16.7,yes,Correct detection
+9,correct_20260829_201035_482074.jpg,bottle,bottle,bottle=0.92,16.7,yes,Correct detection
+10,correct_20260829_201038_681986.jpg,bottle+mouse,bottle+mouse,bottle=0.93;mouse=0.70,16.8,yes,Mouse at the right frame edge; correctly detected
+11,correct_20260829_201041_681209.jpg,bottle,bottle,bottle=0.97,16.7,yes,Correct detection
+12,correct_20260829_201114_074822.jpg,bottle,bottle,bottle=0.95,16.8,yes,Correct detection
+13,correct_20260829_201121_737239.jpg,bottle,bottle,bottle=0.98,16.7,yes,Correct detection
+14,correct_20260829_201131_070241.jpg,bottle+mouse,bottle+mouse,bottle=0.97;mouse=0.96,16.9,yes,Bottle and mouse detected
+15,correct_20260829_201133_937729.jpg,bottle+mouse,bottle+mouse,bottle=0.95;mouse=0.96,16.9,yes,Bottle and mouse detected
+16,correct_20260829_201142_669611.jpg,bottle+mouse,bottle+mouse,bottle=0.98;mouse=0.89,16.8,yes,Bottle and mouse detected
+17,correct_20260829_201145_802174.jpg,bottle+mouse,bottle+mouse,bottle=0.93;mouse=0.98,16.8,yes,Bottle and mouse detected
+18,correct_20260829_201148_735888.jpg,bottle+mouse,bottle+mouse,bottle=0.98;mouse=0.95,16.8,yes,Bottle and mouse detected
+19,correct_20260829_201152_001838.jpg,bottle+mouse,bottle+mouse,bottle=0.90;mouse=0.95,16.7,yes,Bottle and mouse detected
+20,correct_20260829_201155_340646.jpg,bottle+mouse,bottle+mouse,bottle=0.96;mouse=0.92,16.9,yes,Bottle and mouse detected
+21,correct_20260829_201207_071662.jpg,bottle+mouse,bottle+mouse,bottle=0.97;mouse=0.96;mouse=0.70,16.9,yes,Bottle and two mouse detections; accepted during the session
+22,error_20260829_201227_163337.jpg,bottle+mouse,mouse,mouse=0.96,16.7,no,Bottle missed; mouse detected; no wrong-class prediction
